@@ -59,8 +59,7 @@
 Because the **Guition JC2432W328** relies on external storage for handling layout elements and assets, proper SD card preparation is critical:
 
 1. Format a MicroSD card to **FAT32**.
-2. Copy all required UI icon packs, configuration templates, and font assets into the root directory of the SD card.
-3. Insert the MicroSD card into the slot on the back of the Guition module before powering it on.
+2. Insert the MicroSD card into the slot on the back of the Guition module before powering it on.
 
 ---
 
@@ -77,7 +76,7 @@ Because the **Guition JC2432W328** relies on external storage for handling layou
 3. Initial Installation: For the very first installation, the firmware must be flashed directly onto the device via USB.
    Ensure a formatted MicroSD card is inserted into the module.
 
-4. On first boot, use the configuration web portal to set up your Wi-Fi and OctoPrint API key and OctoPrint server IP address.
+4. On first boot, use the configuration web portal to set up your Wi-Fi and OctoPrint API key, OctoPrint server IP address.
 
 5. Enjoy!
 
