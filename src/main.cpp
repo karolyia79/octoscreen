@@ -76,9 +76,9 @@ void setup() {
 void updateStatusLED() {
     static unsigned long lastBlinkTime = 0;
     static bool ledState = false;
-    unsigned long interval = 500; // Villogási ütem (ms)
+    unsigned long interval = 500; 
 
-    int brightness = 128; // Alapértelmezett 50% fényerő (~128)
+    int brightness = 128;
     bool isBlinking = false;
     
     int r = 0, g = 0, b = 0;
@@ -152,7 +152,7 @@ void showToast(String msg, uint16_t borderColor) {
     tft.drawRoundRect(50, 95, 220, 50, 8, borderColor);
     tft.setTextColor(COLOR_TEXT, COLOR_CARD);
     tft.drawString(msg, 70, 112, 2);
-    delay(1000); // 1 másodperc várakozás, miközben látszik az üzenet
+    delay(1000);
 }
 
 void loop() {
@@ -175,7 +175,6 @@ void loop() {
 
     if (currentScreen == SCREEN_STATUS && !screenAsleep) {
         if (print_state == "Printing") {
-            // Itt fut a saját, vajpuha 3D nyomtatófej animációnk!
             drawPrintingAnimation();
         }
 
