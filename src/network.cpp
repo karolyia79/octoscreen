@@ -2,24 +2,21 @@
 #include "network.h"
 #include "ui.h"
 
-// Globális változó a feladatok ütemezéséhez
 unsigned long taskStartTime = 0;
 
 void loadConfig() {
     if (!SD.exists("/config.txt")) {
         writeLog("Nincs config fájl az SD-n, alapértelmezettek betöltése.");
         
-        // Eredeti alapértelmezett értékeid
-        wifi_ssid = "lyraiot193";
-        wifi_pass = "nemezajelszo001";
-        octo_ip = "192.168.1.150";
-        octo_apikey = "Pq-ob1EMJnM_4lnwH_Yxf8keEw4b7HZALJVduqtR5I4";
+        wifi_ssid = "SSID";
+        wifi_pass = "your ssid password";
+        octo_ip = "your octoprint server ip";
+        octo_apikey = "your octoprint server API code";
         lang = "en"; 
         color_theme = 0;
         sleep_enabled = false;
         sleep_timeout = 20;
 
-        // Létrehozzuk a fájlt az alapértelmezettekkel, hogy később szerkeszthető legyen
         saveConfig(wifi_ssid, wifi_pass, octo_ip, octo_apikey, lang, color_theme, sleep_enabled, sleep_timeout);
         return;
     }
