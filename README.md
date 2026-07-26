@@ -40,12 +40,12 @@
 
 | Printing Status Screen | Main Menu |
 | :---: | :---: |
-| ![Printing Status](WIN_20260726_08_32_28_Pro.jpg) | ![Main Menu](WIN_20260726_08_32_54_Pro.jpg) |
+| ![Printing Status](/screenshots/WIN_20260726_08_50_38_Pro.jpg) | ![Main Menu](/screenshots/WIN_20260726_08_50_51_Pro.jpg) |
 | *Live thermal monitoring & progress tracking* | *Central hub for calibration & movement* |
 
 | Device Settings | Web Configuration Panel |
 | :---: | :---: |
-| ![Settings Menu](WIN_20260726_08_32_33_Pro.jpg) | ![Web Interface](image_723099.png) |
+| ![Settings Menu](/screenshots/WIN_20260726_08_50_57_Pro.jpg) | ![Web Interface](/screenshots/8e324cf9-8702-4f8e-85c3-16983efa802d.png) |
 | *On-device preferences & themes* | *Browser-based provisioning & API setup* |
 
 ---
