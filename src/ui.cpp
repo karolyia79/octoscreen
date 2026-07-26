@@ -76,7 +76,6 @@ void drawPrintingAnimation() {
     static int direction = 2;
     static unsigned long lastAnimTime = 0;
 
-    // Kb. 30 FPS frissítés a vajpuha mozgásért (33 ms)
     if (millis() - lastAnimTime < 33) return; 
     lastAnimTime = millis();
 
@@ -85,66 +84,50 @@ void drawPrintingAnimation() {
     int boxW = 200;
     int boxH = 90;
 
-    // Az animációs területetjebb visszatevék, hogy alul mozogjon a felső sáv alatt
     int innerX = boxX + 8;
-    int innerY = boxY + 28; // Hagyunk helyet a felső százalék kiírásnak
+    int innerY = boxY + 28; 
     int innerW = boxW - 16;
     int innerH = boxH - 34;
 
-    // Csak a belső animációs terület törlése (nincs villogás)
     tft.fillRect(innerX, innerY, innerW, innerH, COLOR_BG);
-    
-    // Build plate (nyomtatóasztal) vonala alul
     tft.drawFastHLine(innerX, innerY + innerH - 2, innerW, 0x7BEF);
 
-    // A nyomtatott tárgy (rétegek) épülése alulról felfelé
     int maxObjectH = innerH - 12;
     int progInt = progress.toInt();
     int currentObjH = (maxObjectH * progInt) / 100;
     
     if (currentObjH > 0) {
         int objTopY = (innerY + innerH - 2) - currentObjH;
-        // Tárgy teste
         tft.fillRect(innerX + 30, objTopY, innerW - 60, currentObjH, COLOR_ACCENT);
         
-        // Stílusos réteg-csíkozás a tárgyon
         for (int h = 4; h < currentObjH; h += 5) {
             tft.drawFastHLine(innerX + 32, (innerY + innerH - 2) - h, innerW - 64, COLOR_BG);
         }
     }
 
-    // Nyomtatófej X mozgás logika
     nozzleX += direction;
     int minX = innerX + 16;
     int maxX = innerX + innerW - 16;
     if (nozzleX > maxX || nozzleX < minX) {
-        direction = -direction; // Irányváltás a széleken
+        direction = -direction;
     }
 
     int tipY = (innerY + innerH - 2) - currentObjH;
     if (tipY < innerY + 10) tipY = innerY + 10;
 
-    // --- KOMPLEX ÉS SZÍNES 3D NYOMTATÓFEJ (TOOLHEAD) ---
-    
-    // 1. Sötétszürke hátsó kocsi lemez
     tft.fillRect(nozzleX - 10, tipY - 18, 20, 4, 0x4208);
 
-    // 2. Ezüstös hűtőborda (bordázott mintával)
     tft.fillRect(nozzleX - 8, tipY - 14, 16, 7, 0xD69A);
     tft.drawFastHLine(nozzleX - 8, tipY - 12, 16, 0x4208);
     tft.drawFastHLine(nozzleX - 8, tipY - 10, 16, 0x4208);
 
-    // 3. Élénk kék hűtőburkolat / ventilátorház oldalt
     tft.fillRect(nozzleX - 12, tipY - 14, 4, 8, 0x001F); 
     tft.fillRect(nozzleX + 8, tipY - 14, 4, 8, 0x001F);  
 
-    // 4. Narancssárga fűtőblokk középen
     tft.fillRect(nozzleX - 6, tipY - 7, 12, 5, COLOR_ORANGE); 
 
-    // 5. Sárgaréz fúvóka csúcs (Nozzle)
     tft.fillRect(nozzleX - 2, tipY - 2, 4, 3, 0xFFE0);
 
-    // 6. Kinyomtatott izzó filament szál a fúvóka alól a tárgyra terülve
     tft.fillRect(nozzleX - 4, tipY + 1, 9, 2, COLOR_ACCENT);
 }
 
@@ -161,7 +144,6 @@ void drawStatusScreen() {
     tft.setTextColor(COLOR_SUBTEXT, COLOR_BG);
     tft.drawString(headerText, 10, 8, 1);
 
-    // MENU gomb (átlátszó háttérrel a keret elkerülésére)
     tft.fillRoundRect(240, 5, 72, 24, 6, COLOR_ACCENT);
     tft.setTextColor(COLOR_TEXT);
     tft.drawString("MENU", 260, 10, 1);
@@ -193,7 +175,6 @@ void drawStatusScreen() {
         tft.setTextColor(COLOR_TEXT, COLOR_CARD);
         tft.drawString(progress + "%", 170, 106, 2);
     } else {
-        // Készenléti állapotban a szokásos szöveg
         tft.setTextColor(COLOR_SUBTEXT, COLOR_CARD);
         tft.drawString(t("Nyomtato keszenletben", "Printer Ready"), 75, 137, 1);
     }
