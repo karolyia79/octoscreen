@@ -1,4 +1,4 @@
-# OctoScreen 🖨️✨
+# CYDOctoScreen 🖨️✨
 
 <div align="center">
 
@@ -15,7 +15,7 @@
 
 ## 🌟 Overview
 
-**OctoScreen** is an open-source companion firmware designed to bring a dedicated, highly responsive physical touchscreen controller directly to your 3D printer. Running on the affordable and powerful **Guition JC2432W328** hardware board, it interfaces seamlessly with your OctoPrint server over Wi-Fi, giving you total control and real-time telemetry right at your printer enclosure without needing a bulky desktop or constantly pulling out your phone.
+**CYDOctoScreen** is an open-source companion firmware designed to bring a dedicated, highly responsive physical touchscreen controller directly to your 3D printer. Running on the affordable and powerful **Guition JC2432W328** hardware board, it interfaces seamlessly with your OctoPrint server over Wi-Fi, giving you total control and real-time telemetry right at your printer enclosure without needing a bulky desktop or constantly pulling out your phone.
 
 ---
 
@@ -67,7 +67,7 @@ Because the **Guition JC2432W328** relies on external storage for handling layou
 
 1. Clone this repository or download the source code:
    ```bash
-   git clone [https://github.com/karolyia79/octoscreen.git](https://github.com/karolyia79/octoscreen.git)
+   git clone [https://github.com/karolyia79/cydoctoscreen.git](https://github.com/karolyia79/cydoctoscreen.git)
    ```
 
 2. Open the project in PlatformIO or the Arduino IDE (with ESP32 board support packages installed).
