@@ -67,7 +67,7 @@ Because the **Guition JC2432W328** relies on external storage for handling layou
 
 1. Clone this repository or download the source code:
    ```bash
-   git clone [https://github.com/karolyia79/cydoctoscreen.git](https://github.com/karolyia79/cydoctoscreen.git)
+   git clone [https://github.com/karolyia79/cydos.git](https://github.com/karolyia79/cydoctoscreen.git)
    ```
 
 2. Open the project in PlatformIO or the Arduino IDE (with ESP32 board support packages installed).
